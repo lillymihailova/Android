@@ -50,7 +50,7 @@ public class MapsActivity extends FragmentActivity implements LocationListener {
         }
     }
 
-    public void findAddress(List<Address> address) {
+    private void findAddress(List<Address> address) {
         Address location = address.get(0);
         LatLng latLng = new LatLng(location.getLatitude(), location.getLongitude());
         MarkerOptions markerOptions = new MarkerOptions();
@@ -60,7 +60,7 @@ public class MapsActivity extends FragmentActivity implements LocationListener {
         mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(latLng, 17.0f));
     }
 
-    public void createDialog() {
+    private void createDialog() {
         AlertDialog.Builder dialog = new AlertDialog.Builder(this);
         dialog.setMessage("Not found location!" + "\n" + "Please start Data if it's not!");
         dialog.setNeutralButton("Ok", new DialogInterface.OnClickListener() {
